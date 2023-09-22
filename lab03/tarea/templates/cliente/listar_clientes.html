@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Clientes</title>
+</head>
+<body>
+    <h1>Listado de Clientes</h1>
+    <ul>
+        {% for cliente in clientes %}
+            <li><a href="{% url 'detalle_cliente' cliente.id %}">{{ cliente.nombre }}</a></li>
+        {% empty %}
+            <li>No hay clientes disponibles.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'index' %}">Volver a la página principal</a>
+</body>
+</html>

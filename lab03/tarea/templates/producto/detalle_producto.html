@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle de Producto</title>
+</head>
+<body>
+    <h1>Detalle de Producto</h1>
+    
+    <h2>{{ producto.nombre }}</h2>
+    
+    <p>ID de Producto: {{ producto.id_producto }}</p>
+    <p>Precio Actual: ${{ producto.precio_actual }}</p>
+    <p>Stock Disponible: {{ producto.stock }}</p>
+    
+    <h3>Proveedor</h3>
+    <p>Nombre del Proveedor: {{ producto.proveedor.nombre }}</p>
+    <p>Dirección del Proveedor: {{ producto.proveedor.direccion }}</p>
+    <p>Teléfono del Proveedor: {{ producto.proveedor.telefono }}</p>
+    <p>Página Web del Proveedor: {{ producto.proveedor.pagina_web }}</p>
+    
+    <!-- Puedes agregar más detalles o personalización aquí -->
+    
+    <a href="{% url 'listar_productos' %}">Volver a la lista de productos</a>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Venta</title>
+</head>
+<body>
+    <h1>Detalle de Venta</h1>
+
+    <p><strong>Número de Factura:</strong> {{ venta.numero_factura }}</p>
+    <p><strong>Fecha:</strong> {{ venta.fecha }}</p>
+    <p><strong>Cliente:</strong> {{ venta.cliente.nombre }}</p>
+    <p><strong>Descuento:</strong> {{ venta.descuento }}</p>
+    <p><strong>Monto Final:</strong> {{ venta.monto_final }}</p>
+
+    <h2>Detalles de la Venta</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio de Venta</th>
+                <th>Cantidad</th>
+                <th>Monto Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for detalle in detalles %}
+                <tr>
+                    <td>{{ detalle.producto.nombre }}</td>
+                    <td>{{ detalle.precio_venta }}</td>
+                    <td>{{ detalle.cantidad }}</td>
+                    <td>{{ detalle.monto_total }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a href="{% url 'listar_ventas' %}">Volver a la lista de ventas</a>
+</body>
+</html>

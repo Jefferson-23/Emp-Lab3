@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Cliente</title>
+</head>
+<body>
+    <h1>Detalles del Cliente</h1>
+    <table>
+        <tr>
+            <th>Código:</th>
+            <td>{{ cliente.codigo }}</td>
+        </tr>
+        <tr>
+            <th>Nombre:</th>
+            <td>{{ cliente.nombre }}</td>
+        </tr>
+        <tr>
+            <th>Dirección:</th>
+            <td>{{ cliente.direccion }}</td>
+        </tr>
+        <tr>
+            <th>Teléfonos:</th>
+            <td>
+                <ul>
+                    {% for telefono in telefonos %}
+                        <li>{{ telefono.numero }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <a href="{% url 'listar_clientes' %}">Volver a la lista de clientes</a>
+</body>
+</html>
